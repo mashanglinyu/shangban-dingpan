@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mashanglinyu.github.io/shangban-dingpan/sitemap.xml
