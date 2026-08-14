@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马上淋雨 - 上班盯盘助手</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;900&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .tagline {
+            font-family: 'Noto Serif SC', 'STKaiti', 'KaiTi', serif;
+            letter-spacing: .35em;
+            background: linear-gradient(100deg, #1e3a5f 0%, #3b6ea5 45%, #b08d4f 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 12px rgba(59,110,165,.12);
+        }
+        .qr-pop { display: none; }
+        .social-item:hover .qr-pop,
+        .social-item.show .qr-pop { display: block; }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-gray-800">
+<!-- 顶部导航：左上角 头像 + 马上淋雨 -->
+<nav class="container mx-auto px-6 py-5 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+        <img src="./股票摸鱼工具素材/马上淋雨头像像素画.png" alt="马上淋雨头像" class="w-10 h-10 rounded-full object-cover border border-gray-200 shadow-sm">
+        <div class="text-2xl font-bold">马上淋雨</div>
+    </div>
+    <div class="space-x-6 hidden md:flex">
+        <a href="#feature" class="hover:text-blue-600">功能</a>
+        <a href="#download" class="hover:text-blue-600">下载</a>
+        <a href="#social" class="hover:text-blue-600">关注</a>
+        <a href="#donate" class="hover:text-blue-600">赞助</a>
+        <a href="#disclaimer" class="hover:text-blue-600">免责声明</a>
+    </div>
+</nav>
+
+<!-- 顶部高级感标语 -->
+<div class="text-center pt-6 pb-2 px-6">
+    <p class="tagline text-lg md:text-2xl font-bold">褪去股市旧枷锁，蛋炒饭里悟真我</p>
+</div>
+
+<!-- Hero主区域 -->
+<section class="container mx-auto px-6 py-10 md:py-16">
+    <div class="flex flex-col md:flex-row items-center gap-10">
+        <!-- 官网高清大图 -->
+        <div class="w-72 md:w-80 shrink-0">
+            <img src="./股票摸鱼工具素材/软件官网高清大图.png" alt="上班盯盘助手" class="w-full h-auto object-contain rounded-2xl shadow-lg">
+        </div>
+        <div>
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight">上班盯盘助手</h1>
+            <p class="mt-4 text-lg text-gray-600 max-w-xl leading-relaxed">
+                工位悬浮行情小工具：置顶悬浮、低调查看自选行情与大盘指数，支持透明皮肤、碰触显示、锁定穿透等摸鱼模式。仅行情查看，不做投资建议。
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4" id="download">
+                <a href="./发布版/上班盯盘助手.exe" download="上班盯盘助手.exe"
+                   class="bg-black text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-800 transition">
+                    📥 下载 Windows v1.0
+                </a>
+                <a href="#usage"
+                   class="border border-gray-400 px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-100 transition">
+                    📄 使用说明
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">绿色免安装单文件 · 约 9MB · 支持 Windows 10 / 11 · 作者：马上淋雨</p>
+        </div>
+    </div>
+</section>
+
+<!-- 功能介绍区域 -->
+<section id="feature" class="bg-white py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-4">软件功能</h2>
+        <p class="text-center text-gray-500 mb-12">为上班摸鱼场景设计的一整套低调查情方案</p>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+                <img src="./股票摸鱼工具素材/小工具左上图.png" alt="悬浮窗图标" class="w-9 h-9 object-contain mb-3 rounded-md">
+                <h3 class="text-xl font-bold mb-2">置顶悬浮窗</h3>
+                <p class="text-gray-600 leading-relaxed">无边框小窗口始终置顶，不遮挡工作软件；自动记忆上次窗口位置和大小，下次打开无需重新调整，工位低调看行情。</p>
+            </div>
+            <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+                <div class="text-3xl mb-3 text-blue-600">＋</div>
+                <h3 class="text-xl font-bold mb-2">自选行情浏览</h3>
+                <p class="text-gray-600 leading-relaxed">支持添加最多 10 支自选股（自动识别沪深京代码），实时显示现价、涨跌额、涨跌幅、涨停价；点击任意一行可展开详情：今开、昨收、最高、最低、成交额、换手率、量比、PE/PB、主力净额、振幅。自选列表本地保存，重启不丢。</p>
+            </div>
+            <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+                <div class="text-3xl mb-3 text-blue-600">▾</div>
+                <h3 class="text-xl font-bold mb-2">大盘指数</h3>
+                <p class="text-gray-600 leading-relaxed">内置上证指数、深证成指、创业板指三大指数，与自选股同屏显示；不需要时点一下即可整栏隐藏，界面更精简。</p>
+            </div>
+            <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+                <div class="text-3xl mb-3">🎨</div>
+                <h3 class="text-xl font-bold mb-2">深色 / 透明双皮肤</h3>
+                <p class="text-gray-600 leading-relaxed">一键切换：深色毛玻璃面板适合日常；透明皮肤只显示股票名字和涨跌，背景完全透明融入桌面，鼠标移上去才浮现功能栏，隐蔽性拉满。</p>
+            </div>
+            <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+                <div class="text-3xl mb-3">👁️</div>
+                <h3 class="text-xl font-bold mb-2">碰触显示（眼睛开关）</h3>
+                <p class="text-gray-600 leading-relaxed">开启后窗口平时完全隐藏，鼠标移到窗口位置才浮现，移开即消失，任务栏图标也随之消失；点托盘图标可一键唤回。</p>
+            </div>
+            <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+                <div class="text-3xl mb-3">🔒</div>
+                <h3 class="text-xl font-bold mb-2">锁定穿透（透明皮肤）</h3>
+                <p class="text-gray-600 leading-relaxed">锁定后行情内容常驻桌面且鼠标完全穿透——下面的软件照常点击操作，内容只是"贴在屏幕上"；悬停只出现锁定标志，点击即可解锁。锁定状态下还能叠加碰触显示，随时隐身。</p>
+            </div>
+            <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+                <img src="./股票摸鱼工具素材/软件图标.png" alt="托盘图标" class="w-9 h-9 object-contain mb-3 rounded-md">
+                <h3 class="text-xl font-bold mb-2">托盘驻留</h3>
+                <p class="text-gray-600 leading-relaxed">系统托盘小图标常驻：左键单击显示/隐藏窗口，右键菜单退出；顶栏"—"可最小化到任务栏。老板路过，一键隐身。</p>
+            </div>
+            <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+                <div class="text-3xl mb-3">🔄</div>
+                <h3 class="text-xl font-bold mb-2">数据与刷新</h3>
+                <p class="text-gray-600 leading-relaxed">行情取自腾讯、东方财富公开接口，支持手动刷新与自动轮询（3s / 5s / 10s / 30s 四档可切换），涨跌闪烁提示，状态栏实时显示更新时间与连接状态。</p>
+            </div>
+            <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+                <div class="text-3xl mb-3">🎁</div>
+                <h3 class="text-xl font-bold mb-2">轻量省心</h3>
+                <p class="text-gray-600 leading-relaxed">绿色免安装单文件约 9MB，无广告、无后台残留；启动时展示免责声明；自定义软件图标与作者署名；开源项目结构清晰，可自行二次开发打包。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 使用说明区域 -->
+<section id="usage" class="container mx-auto px-6 py-14">
+    <h2 class="text-3xl font-bold text-center mb-2">使用说明</h2>
+    <p class="text-center text-gray-500 mb-8">三步上手，摸鱼无忧</p>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded-xl border border-gray-200">
+            <h3 class="font-bold text-base mb-1.5">1. 下载运行</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">点击上方「下载 Windows v1.0」获取 <code>上班盯盘助手.exe</code>，绿色免安装，双击即用（Windows 10 / 11）。首次打开会弹出免责声明，点击「我已阅读并了解」进入主界面。</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-gray-200">
+            <h3 class="font-bold text-base mb-1.5">2. 添加自选</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">顶栏输入 6 位股票代码（如 002580，沪深京自动识别）后点 ＋ 添加，最多 10 支；鼠标悬停行尾 ✕ 可移除，自选列表本地保存。</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-gray-200">
+            <h3 class="font-bold text-base mb-1.5">3. 查看行情</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">列表实时显示现价、涨跌额、涨跌幅与涨停价；点击任意一行展开详情（今开/昨收/最高/最低/成交额/换手率/量比/PE·PB/主力净额/振幅）。指数栏显示上证、深证、创业板，点顶栏 ▾ 可隐藏/显示大盘。</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-gray-200">
+            <h3 class="font-bold text-base mb-1.5">4. 刷新设置</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">底栏 🔄 手动刷新；「刷新 5s」点击切换自动轮询间隔（3s / 5s / 10s / 30s）。行情来自腾讯、东方财富公开接口，需要联网。</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-gray-200">
+            <h3 class="font-bold text-base mb-1.5">5. 摸鱼三件套</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">🎨 皮肤：深色 ⇄ 透明一键切换，透明皮肤只显示股票名字和涨跌，悬停才浮现功能栏。<br>👁️ 碰触显示：鼠标移入窗口区域才显示、移开即隐藏，点托盘图标可唤回。<br>🔒 锁定穿透（透明皮肤）：内容常驻、鼠标穿透，悬停点锁解锁，可与碰触显示叠加。</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-gray-200">
+            <h3 class="font-bold text-base mb-1.5">6. 窗口管理</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">按住顶栏拖动，右下角手柄或拖拽边缘调整大小，位置大小自动记忆；「—」最小化到任务栏，✕ 关闭；托盘左键显示/隐藏、右键退出。各项设置本地保存，重启不丢。</p>
+        </div>
+    </div>
+</section>
+
+<!-- 社交账号区域 -->
+<section id="social" class="bg-[#fafafa] py-16">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-2">关注马上淋雨</h2>
+        <p class="text-gray-500 mb-12">鼠标悬停（手机点按）账号卡片，查看二维码</p>
+        <div class="flex flex-wrap justify-center gap-10">
+            <!-- 抖音 -->
+            <div class="social-item relative flex flex-col items-center">
+                <div class="w-20 h-20 rounded-2xl bg-black text-white flex items-center justify-center text-lg font-black shadow-md cursor-pointer select-none">抖音</div>
+                <p class="mt-3 text-gray-700 font-medium">抖音</p>
+                <div class="qr-pop absolute bottom-full left-1/2 -translate-x-1/2 mb-4 z-20">
+                    <div class="bg-white p-3 rounded-xl shadow-2xl border border-gray-200">
+                        <img src="./账号二维码/抖音二维码.png" class="w-auto h-auto max-w-80 max-h-80" alt="抖音二维码">
+                        <p class="text-xs text-gray-500 mt-2">扫码关注抖音</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 哔哩哔哩 -->
+            <div class="social-item relative flex flex-col items-center">
+                <div class="w-20 h-20 rounded-2xl text-white flex items-center justify-center text-sm font-bold tracking-tight shadow-md cursor-pointer select-none" style="background:#FB7299">bilibili</div>
+                <p class="mt-3 text-gray-700 font-medium">哔哩哔哩</p>
+                <div class="qr-pop absolute bottom-full left-1/2 -translate-x-1/2 mb-4 z-20">
+                    <div class="bg-white p-3 rounded-xl shadow-2xl border border-gray-200">
+                        <img src="./账号二维码/哔哩哔哩二维码.jpg" class="w-auto h-auto max-w-80 max-h-80" alt="哔哩哔哩二维码">
+                        <p class="text-xs text-gray-500 mt-2">扫码关注哔哩哔哩</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 小红书 -->
+            <div class="social-item relative flex flex-col items-center">
+                <div class="w-20 h-20 rounded-2xl text-white flex items-center justify-center text-lg font-black shadow-md cursor-pointer select-none" style="background:#FF2442">小红书</div>
+                <p class="mt-3 text-gray-700 font-medium">小红书</p>
+                <div class="qr-pop absolute bottom-full left-1/2 -translate-x-1/2 mb-4 z-20">
+                    <div class="bg-white p-3 rounded-xl shadow-2xl border border-gray-200">
+                        <img src="./账号二维码/小红书二维码.png" class="w-auto h-auto max-w-80 max-h-80" alt="小红书二维码">
+                        <p class="text-xs text-gray-500 mt-2">扫码关注小红书</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 赞助小鱼干区域 -->
+<section id="donate" class="bg-white py-16">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-2">赞助小鱼干 🐟</h2>
+        <p class="text-gray-500 mb-8">软件永久免费，如果它帮你少挨了几次老板的凝视，欢迎投喂一条小鱼干~</p>
+        <button id="donate-btn" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl hover:from-amber-500 hover:to-orange-600 transition">
+            🐟 我要赞助小鱼干
+        </button>
+        <div id="donate-panel" class="hidden mt-10">
+            <div class="flex flex-wrap justify-center gap-10">
+                <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-200">
+                    <img src="./收款码/微信收钱码.png" class="w-auto h-auto max-w-64 max-h-64" alt="微信收款码">
+                    <p class="text-sm text-gray-600 mt-3 font-medium">微信</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-200">
+                    <img src="./收款码/支付宝收钱码.jpg" class="w-auto h-auto max-w-64 max-h-64" alt="支付宝收款码">
+                    <p class="text-sm text-gray-600 mt-3 font-medium">支付宝</p>
+                </div>
+            </div>
+            <p class="mt-6 text-sm text-gray-400">扫码即投喂，谢谢老板的小鱼干 🎣</p>
+        </div>
+    </div>
+</section>
+
+<!-- 免责声明区域 -->
+<section id="disclaimer" class="container mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold mb-4">免责声明</h2>
+    <div class="bg-gray-100 p-6 rounded-lg text-sm text-gray-700 leading-relaxed">
+        <p>1.上班盯盘助手仅为<strong>行情信息查看辅助工具</strong>，软件本身不生成、不加工任何行情原始数据，所有行情数据均来源于第三方公开互联网接口。</p>
+        <p class="mt-2">2.本工具<strong>不构成任何投资建议、理财指导、交易决策参考</strong>，不提供选股、荐股、预测涨跌、操盘分析类功能。所有股票行情、价格信息仅供浏览参考。</p>
+        <p class="mt-2">3.行情数据来自第三方公开接口，因<strong>网络延迟、接口变更、停用或故障</strong>等原因，可能存在数据延迟、缺失、不准确等情况，本软件不保证数据的实时性、准确性与完整性。</p>
+        <p class="mt-2">4.<strong>股市有风险，投资需谨慎</strong>。用户一切证券交易行为及盈亏结果均由用户本人自行承担，本软件及作者不对使用者的任何投资损失承担任何法律与经济责任。</p>
+        <p class="mt-2">5.本软件仅供<strong>个人学习、非商业</strong>使用，请勿将本工具用于高频交易、机构商用等场景。禁止利用本工具从事违反证券相关法律法规的行为。</p>
+        <p class="mt-2">6.Windows 系统可能提示“未知发布者”：本项目为个人业余项目，暂无数字签名，软件不会窃取账户、交易密码等敏感信息，源代码可联系作者获取。</p>
+        <p class="mt-2">7.如因使用本软件产生任何直接或间接损失，均由使用者自行负责。如不接受本声明，请勿使用并立即删除本软件。</p>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="bg-gray-900 text-gray-300 py-8">
+    <div class="container mx-auto px-6 text-center">
+        <p>马上淋雨 - 上班盯盘助手 ©2026 | 仅供个人非商业使用</p>
+        <p class="mt-2 text-xs text-gray-500">褪去股市旧枷锁，蛋炒饭里悟真我</p>
+    </div>
+</footer>
+
+<script>
+    // 移动端点按切换二维码
+    document.querySelectorAll('.social-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+            var already = item.classList.contains('show');
+            document.querySelectorAll('.social-item').forEach(function (o) { o.classList.remove('show'); });
+            if (!already) item.classList.add('show');
+        });
+    });
+
+    // 赞助小鱼干展开/收起
+    document.getElementById('donate-btn').addEventListener('click', function () {
+        document.getElementById('donate-panel').classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
